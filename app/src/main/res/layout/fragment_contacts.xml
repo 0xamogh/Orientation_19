@@ -1,11 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:diagonal="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/vpattern"
+    android:padding="5sp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <com.github.florent37.diagonallayout.DiagonalLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:elevation="30dp"
+        app:diagonal_angle="10"
+        diagonal:diagonal_direction="left"
+        diagonal:diagonal_position="bottom">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/nz" />
+
+    </com.github.florent37.diagonallayout.DiagonalLayout>
+
+    </RelativeLayout>>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="20dp"
+        android:id="@+id/r1"
+        >
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/l1"
+    android:orientation="vertical">
+        <ImageView
+            android:id="@+id/img_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sahil" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Contacts"/>
-</RelativeLayout>
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="OVERALL COORDINATOR"/>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingTop="5sp"
+        >
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/call" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="7973703540"
+            android:id="@+id/txt_sahil"/>
+    </LinearLayout>
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignStart="@+id/l1"
+    android:layout_alignLeft="@+id/l1"
+    android:layout_alignEnd="@+id/l1"
+    android:layout_alignRight="@+id/l1"
+    android:layout_marginStart="175dp"
+    android:layout_marginLeft="175dp"
+    android:layout_marginEnd="-233dp"
+    android:layout_marginRight="-233dp"
+    android:orientation="vertical"
+    android:paddingLeft="30sp">
+
+    <ImageView
+        android:id="@+id/img_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/diksha" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="OVERALL COORDINATOR"/>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingTop="5sp"
+        >
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/call" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="7973703540" />
+    </LinearLayout>
+</LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="20dp"
+        android:id="@+id/r2"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/l2"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/img_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/neel" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="OVERALL COORDINATOR"/>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingTop="5sp"
+                >
+
+                <ImageView
+                    android:layout_width="37dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/call" />
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="7973703540" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/l2"
+            android:layout_alignLeft="@+id/l2"
+            android:layout_alignEnd="@+id/l2"
+            android:layout_alignRight="@+id/l2"
+            android:layout_marginStart="175dp"
+            android:layout_marginLeft="175dp"
+            android:layout_marginEnd="-233dp"
+            android:layout_marginRight="-233dp"
+            android:orientation="vertical"
+            android:paddingLeft="30sp">
+
+            <ImageView
+                android:id="@+id/img_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/nilesh" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="OVERALL COORDINATOR"/>
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingTop="5sp"
+                >
+
+                <ImageView
+                    android:layout_width="37dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/call" />
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="7973703540" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
