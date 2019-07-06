@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:background="@color/colorPrimary">
+
+    <me.wangyuwei.particleview.ParticleView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:pv_background_color="@color/colorPrimary"
+        app:pv_host_text="Orientation"
+        app:pv_host_text_size="30sp"
+        app:pv_particle_text="19"
+        app:pv_particle_text_size="30sp"
+        android:id="@+id/particle_view"
+        app:pv_text_color="#ffffff"
+        app:pv_text_anim_time="1500"
+        app:pv_spread_anim_time="15000"
+        app:pv_host_text_anim_time="4000"/>
+
+</RelativeLayout>
