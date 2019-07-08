@@ -24,7 +24,6 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
     private EditText rollNumber, password;
     private Button signInButton;
-    private TextView forgotPassword;
     private ApiInterface apiInterface;
     private LoginResponse loginResponse;
     private MyDatabase myDatabase = new MyDatabase(this);
@@ -36,7 +35,6 @@ public class LoginActivity extends AppCompatActivity {
         rollNumber = findViewById(R.id.et_roll_number);
         password = findViewById(R.id.et_password);
         signInButton = findViewById(R.id.sign_in_button);
-        forgotPassword = findViewById(R.id.tv_forgot_password);
 
         rollNumber.addTextChangedListener(new TextWatcher() {
             @Override
