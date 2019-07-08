@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,6 +43,7 @@ class HwAdapter extends BaseAdapter {
     int mnthlength;
     String itemvalue, curentDateString;
     DateFormat df;
+    private int pos;
 
     private ArrayList<String> items;
     public static List<String> day_string;
@@ -88,6 +91,7 @@ class HwAdapter extends BaseAdapter {
 
         }
 
+        pos=position;
 
         dayView = (TextView) v.findViewById(R.id.date);
         String[] separatedTime = day_string.get(position).split("-");
@@ -105,16 +109,17 @@ class HwAdapter extends BaseAdapter {
         } else {
             // setting curent month's days in blue color.
             dayView.setTextColor(Color.parseColor("#696969"));
+
         }
 
 
         if (day_string.get(position).equals(curentDateString)) {
+            v.setBackgroundResource(R.drawable.round_for_current_date);
+            dayView.setTextColor(Color.parseColor("#ffffff"));
 
-            v.setBackgroundColor(Color.parseColor("#ffffff"));
         } else {
             v.setBackgroundColor(Color.parseColor("#ffffff"));
         }
-
 
         dayView.setText(gridvalue);
 
@@ -195,9 +200,14 @@ class HwAdapter extends BaseAdapter {
                     } else if ((Integer.parseInt(gridvalue) < 7) && (pos > 28)) {
 
                     } else {
-                        v.setBackgroundColor(Color.parseColor("#343434"));
-                        v.setBackgroundResource(R.drawable.rounded_calender);
-                        txt.setTextColor(Color.parseColor("#696969"));
+                        if (day_string.get(pos).equals(curentDateString)) {
+                            v.setBackgroundColor(Color.parseColor("#ffffff"));
+                            v.setBackgroundResource(R.drawable.rounded_calender);
+                            txt.setTextColor(Color.parseColor("#ffffff"));
+
+                        }else{
+                        v.setBackgroundResource(R.drawable.round);
+                        txt.setTextColor(Color.parseColor("#ffffff"));}
                     }
 
                 }

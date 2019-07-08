@@ -38,7 +38,6 @@ public class Calendar extends Fragment {
         HomeCollection.date_collection_arr.add( new HomeCollection("2019-09-09" ,"Christmas","Holiday","this is holiday"));
 
 
-
         cal_month = (GregorianCalendar) GregorianCalendar.getInstance();
         cal_month_copy = (GregorianCalendar) cal_month.clone();
         hwAdapter = new HwAdapter(getActivity(), cal_month,HomeCollection.date_collection_arr);
