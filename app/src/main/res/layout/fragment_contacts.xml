@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,197 +7,231 @@
     android:orientation="vertical"
     android:background="@drawable/vpattern"
     android:padding="5sp">
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <com.github.florent37.diagonallayout.DiagonalLayout
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:elevation="30dp"
-        app:diagonal_angle="10"
-        diagonal:diagonal_direction="left"
-        diagonal:diagonal_position="bottom">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/nz" />
-
-    </com.github.florent37.diagonallayout.DiagonalLayout>
-
-    </RelativeLayout>>
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:paddingHorizontal="10dp"
-        android:paddingTop="20dp"
+        android:paddingTop="40dp"
         android:id="@+id/r1"
         >
+
+        <com.tomer.fadingtextview.FadingTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:texts="@array/contact"
+            android:textColor="#2A2829"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:timeout="1000"
+             />
+
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/l1"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:backgroundTint="@color/colorPrimaryDark">
         <ImageView
             android:id="@+id/img_1"
-            android:layout_width="wrap_content"
+            android:layout_width="175sp"
             android:layout_height="wrap_content"
             android:src="@drawable/sahil" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:text="OVERALL COORDINATOR"/>
     <LinearLayout
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:paddingTop="5sp"
-        >
-
-        <ImageView
-            android:layout_width="37dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/call" />
-
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="7973703540"
-            android:id="@+id/txt_sahil"/>
-    </LinearLayout>
-</LinearLayout>
-<LinearLayout
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+<TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_alignStart="@+id/l1"
-    android:layout_alignLeft="@+id/l1"
-    android:layout_alignEnd="@+id/l1"
-    android:layout_alignRight="@+id/l1"
-    android:layout_marginStart="175dp"
-    android:layout_marginLeft="175dp"
-    android:layout_marginEnd="-233dp"
-    android:layout_marginRight="-233dp"
-    android:orientation="vertical"
-    android:paddingLeft="30sp">
-
-    <ImageView
-        android:id="@+id/img_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/diksha" />
+    android:textSize="30sp"
+    android:textStyle="bold"
+    android:text="SAHIL"
+    android:paddingLeft="10sp"
+    />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:paddingLeft="10sp"
         android:text="OVERALL COORDINATOR"/>
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:paddingTop="5sp"
+        android:paddingTop="15sp"
         >
 
         <ImageView
-            android:layout_width="37dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:src="@drawable/call" />
 
         <TextView
-            android:layout_width="120dp"
+            android:id="@+id/txt_sahil"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="7973703540" />
+            android:text="7973703540"
+            android:textColor="#0F0F0F"
+            android:textSize="15sp" />
+    </LinearLayout>
     </LinearLayout>
 </LinearLayout>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingHorizontal="10dp"
-        android:paddingTop="20dp"
-        android:id="@+id/r2"
-        >
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/l2"
-            android:orientation="vertical">
+            android:orientation="horizontal">
             <ImageView
-                android:id="@+id/img_3"
-                android:layout_width="wrap_content"
+                android:id="@+id/img_2"
+                android:layout_width="175sp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/neel" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:text="OVERALL COORDINATOR"/>
+                android:src="@drawable/diksha" />
             <LinearLayout
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:paddingTop="5sp"
-                >
-
-                <ImageView
-                    android:layout_width="37dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/call" />
-
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:text="7973703540" />
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:text="DIKSHA"
+                    android:paddingLeft="10sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:paddingLeft="10sp"
+                    android:text="EXCOM MEMBER"/>
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:paddingTop="15sp"
+                    >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/call" />
+
+                    <TextView
+                        android:id="@+id/txt_diksha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="700807140"
+                        android:textColor="#0F0F0F"
+                        android:textSize="15sp" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/l2"
-            android:layout_alignLeft="@+id/l2"
-            android:layout_alignEnd="@+id/l2"
-            android:layout_alignRight="@+id/l2"
-            android:layout_marginStart="175dp"
-            android:layout_marginLeft="175dp"
-            android:layout_marginEnd="-233dp"
-            android:layout_marginRight="-233dp"
-            android:orientation="vertical"
-            android:paddingLeft="30sp">
-
+            android:id="@+id/l3"
+            android:orientation="horizontal">
             <ImageView
-                android:id="@+id/img_4"
-                android:layout_width="wrap_content"
+                android:id="@+id/img_3"
+                android:layout_width="175sp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/nilesh" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:text="OVERALL COORDINATOR"/>
+                android:src="@drawable/neel" />
             <LinearLayout
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:paddingTop="5sp"
-                >
-
-                <ImageView
-                    android:layout_width="37dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/call" />
-
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:text="7973703540" />
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:text="NEEL"
+                    android:paddingLeft="10sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:paddingLeft="10sp"
+                    android:text="HEAD, OC"/>
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:paddingTop="15sp"
+                    >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/call" />
+
+                    <TextView
+                        android:id="@+id/txt_neel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7558722946"
+                        android:textColor="#0F0F0F"
+                        android:textSize="15sp" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </RelativeLayout>
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/l4"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/img_4"
+                android:layout_width="175sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/nilesh" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:text="NILESH"
+                    android:paddingLeft="10sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:paddingLeft="10sp"
+                    android:text="HEAD GL AND ENTERTAINEMENT "/>
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:paddingTop="15sp"
+                    >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/call" />
+
+                    <TextView
+                        android:id="@+id/txt_nilesh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8602520816"
+                        android:textColor="#0F0F0F"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

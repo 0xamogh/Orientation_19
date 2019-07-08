@@ -1,26 +1,45 @@
 package com.example.orientation19;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.mlsdev.animatedrv.AnimatedRecyclerView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Book_links extends AppCompatActivity {
-    ListView list_books;
-    String[] books = {"Book 1","Book 2","Book 3"};
+    String url="https://spider.nitt.edu/orientation/books/details";
+
+    ArrayList<Book> dataModelArrayList;
+    private Bookadapter rvAdapter;
+    private AnimatedRecyclerView recyclerView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,23 +49,66 @@ public class Book_links extends AppCompatActivity {
         toolbar.setTitle("Orientaion'19");
         toolbar.setTitleTextColor(Color.WHITE);
 
-        list_books = findViewById(R.id.list_books);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,books);
-        list_books.setAdapter(arrayAdapter);
+        final String department=getIntent().getStringExtra("department");
+        RequestQueue queue = Volley.newRequestQueue(this);
+        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("strrrrr", ">>" + response);
+                        try {
 
-        list_books.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                dataModelArrayList = new ArrayList<>();
+                            JSONArray dataArray = new JSONArray(response);
+                                for (int i = 0; i < dataArray.length(); i++) {
+                                    Book playerModel = new Book();
+                                    JSONObject dataobj = dataArray.getJSONObject(i);
+                                    playerModel.setName(dataobj.getString("name"));
+                                    playerModel.setDepartment(dataobj.getString("department"));
+                                    playerModel.setLink(dataobj.getString("link"));
+                                    Log.d("name",dataobj.getString("name"));
+                                    dataModelArrayList.add(playerModel);
+
+                                }
+
+                            recyclerView=(AnimatedRecyclerView)findViewById(R.id.recycler_view);
+                                rvAdapter=new Bookadapter(Book_links.this,dataModelArrayList);
+                                recyclerView.setAdapter(rvAdapter);
+                                //recyclerView.setLayoutManager(new LinearLayoutManager(Book_links.this));
+
+                            rvAdapter.notifyDataSetChanged();
+                            recyclerView.setAdapter(rvAdapter);
+
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // error
+                        Log.d("Error.Response", error.toString());
+                    }
+                }
+        ) {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(Book_links.this, ((TextView) view).getText().toString(), Toast.LENGTH_SHORT).show();
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("department", department);
+                return params;
             }
-        });
+        };
+        queue.add(postRequest);
+
 
     }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_books, menu);
-        return true;
-    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -59,4 +121,7 @@ public class Book_links extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }
