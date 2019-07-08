@@ -18,9 +18,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class Books extends Fragment {
     ListView department;
-    String[] array_department = {"ECE","EEE","MECH","ICE","CIVIL","CHEM","PROD","META","CSE"};
+    String[] array_department = {"CHEM","CIVIL","CSE","ECE","EEE","ICE","MECH","META","PROD"};
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -43,16 +45,26 @@ public class Books extends Fragment {
             }
         });
         department = view.findViewById(R.id.list_dept);
-        ArrayAdapter<String> arrayAdapter;
-        arrayAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,array_department);
-        department.setAdapter(arrayAdapter);
+
+        final ArrayList<department> departments = new ArrayList<department>();
+        departments.add(new department(array_department[0],  R.drawable.chem));
+        departments.add(new department(array_department[1],  R.drawable.civil));
+        departments.add(new department(array_department[2],  R.drawable.cse));
+        departments.add(new department(array_department[3],  R.drawable.ece));
+        departments.add(new department(array_department[4],  R.drawable.eee));
+        departments.add(new department(array_department[5],  R.drawable.ice));
+        departments.add(new department(array_department[6],  R.drawable.mech));
+        departments.add(new department(array_department[7],  R.drawable.prod));
+
+        departmentadapter flavorAdapter = new departmentadapter(view.getContext(), departments);
+        department.setAdapter(flavorAdapter);
 
         department.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String dept = ((TextView) view).getText().toString();
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+
                 Intent intent = new Intent(getContext(),Book_links.class);
-                intent.putExtra("department",dept);
+                intent.putExtra("department",array_department[i]);
                 startActivity(intent);
             }
         });
