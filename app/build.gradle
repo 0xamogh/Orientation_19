@@ -30,8 +30,8 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.android.volley:volley:1.1.1'
     implementation "com.mlsdev.animatedrv:library:1.0.1"
-    implementation 'com.github.florent37:diagonallayout:1.0.9'
-    implementation 'com.yinglan.shadowimageview:shadowimageview:1.0.4'
+    //implementation "com.hanks:htextview-line:0.1.6"
+    implementation 'com.tomer:fadingtextview:2.5'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
