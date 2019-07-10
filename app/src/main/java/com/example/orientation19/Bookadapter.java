@@ -1,17 +1,20 @@
 package com.example.orientation19;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mlsdev.animatedrv.AnimatedRecyclerView;
 
 import java.util.ArrayList;
 
-public class Bookadapter extends AnimatedRecyclerView.Adapter<Bookadapter.MyViewHolder> {
+public class Bookadapter extends AnimatedRecyclerView.Adapter<Bookadapter.MyViewHolder> implements View.OnClickListener {
     private LayoutInflater inflater;
     private ArrayList<Book> dataModelArrayList;
 
@@ -33,11 +36,17 @@ public class Bookadapter extends AnimatedRecyclerView.Adapter<Bookadapter.MyView
         holder.department.setText(dataModelArrayList.get(i).getDepartment());
         holder.link.setText(dataModelArrayList.get(i).getLink());
 
+
     }
 
     @Override
     public int getItemCount() {
         return dataModelArrayList.size();
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
     public class MyViewHolder extends AnimatedRecyclerView.ViewHolder{
@@ -50,6 +59,14 @@ public class Bookadapter extends AnimatedRecyclerView.Adapter<Bookadapter.MyView
             department = (TextView) itemView.findViewById(R.id.department);
             name = (TextView) itemView.findViewById(R.id.name);
             link = (TextView) itemView.findViewById(R.id.link);
+            link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri uri = Uri.parse(link.getText().toString());
+                    Intent intent= new Intent(Intent.ACTION_VIEW,uri);
+                    v.getContext().startActivity(intent);
+                }
+            });
 
         }
     }
