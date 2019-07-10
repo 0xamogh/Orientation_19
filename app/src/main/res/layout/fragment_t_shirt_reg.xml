@@ -1,57 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/vpattern">
+    android:background="@drawable/vpattern"
+    android:animateLayoutChanges="true">
 
-    <ImageView
-        android:id="@+id/img_tshirt"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="478dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="253dp"
-        android:paddingHorizontal="20dp"
-        android:paddingTop="20dp"
-        android:src="@color/colorPrimaryDark" />
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
 
-    <EditText
-        android:id="@+id/edt_roll"
-        android:layout_width="238dp"
-        android:layout_height="72dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="506dp"
-        android:layout_marginEnd="142dp"
-        android:layout_marginRight="142dp"
-        android:hint="Roll no."
-        android:paddingTop="20dp" />
+        <ImageView
+            android:id="@+id/img_tshirt"
+            android:layout_width="match_parent"
+            android:layout_height="478dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="253dp"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:src="@color/colorPrimaryDark" />
 
-    <android.support.v7.widget.AppCompatSpinner
-        android:id="@+id/spn_size"
-        android:layout_width="148dp"
-        android:layout_height="46dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="596dp"
-        android:tooltipText="Select Size"></android.support.v7.widget.AppCompatSpinner>
+        <TextView
+            android:id="@+id/tv_roll"
+            android:layout_width="238dp"
+            android:layout_height="72dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginLeft="31dp"
+            android:layout_marginTop="506dp"
+            android:layout_marginEnd="142dp"
+            android:layout_marginRight="142dp"
+            android:paddingTop="20dp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="293dp"
-        android:layout_marginLeft="293dp"
-        android:layout_marginTop="594dp"
-        android:text="Submit" />
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spn_size"
+            android:layout_width="148dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginLeft="31dp"
+            android:layout_marginTop="596dp"
+            android:tooltipText="Select Size"></android.support.v7.widget.AppCompatSpinner>
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="293dp"
+            android:layout_marginLeft="293dp"
+            android:layout_marginTop="594dp"
+            android:text="Submit" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tShirt_registered_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:animateLayoutChanges="true"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="You have already registered for a T-shirt"
+            android:textColor="#ffffff"
+            android:textSize="17sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/t1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/t2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIZE :"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tshirt_size_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/t2"
+                android:layout_toRightOf="@+id/t2"
+                android:textColor="#ffffff"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:id="@+id/progress_rl"
+        android:animateLayoutChanges="true">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateOnly="true"/>
+    </RelativeLayout>
 </RelativeLayout>

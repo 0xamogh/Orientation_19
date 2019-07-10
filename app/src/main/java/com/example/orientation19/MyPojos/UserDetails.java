@@ -4,6 +4,7 @@ public class UserDetails {
 
     private String loginStatus;
     private String JWTToken;
+    private String rollNumber;
     public String getLoginStatus() {
         return loginStatus;
     }
@@ -18,5 +19,13 @@ public class UserDetails {
 
     public void setJWTToken(String JWTToken) {
         this.JWTToken = JWTToken;
+    }
+
+    public String getRollNumber() {
+        return rollNumber;
+    }
+
+    public void setRollNumber(String rollNumber) {
+        this.rollNumber = rollNumber;
     }
 }

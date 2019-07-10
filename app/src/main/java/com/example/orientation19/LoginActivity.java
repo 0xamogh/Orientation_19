@@ -93,6 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                                     UserDetails userDetails = new UserDetails();
                                     userDetails.setLoginStatus("TRUE");
                                     userDetails.setJWTToken(loginResponse.getJWT());
+                                    userDetails.setRollNumber(rollNumber.getText().toString());
                                     Log.d("jwt",loginResponse.getJWT());
                                     myDatabase.insert(userDetails);
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
@@ -108,6 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onFailure(Call<LoginResponse> call, Throwable t) {
                             Toast.makeText(getApplicationContext(), "Error logging in, Please check your Internet Connection", Toast.LENGTH_SHORT).show();
+                            Log.d("loginfailure",t.getMessage());
                         }
                     });
                 }
