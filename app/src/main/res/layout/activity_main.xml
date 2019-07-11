@@ -14,6 +14,12 @@
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Events"
+        android:background="#FFF"
+        android:scrollbars="vertical"/>
 
     <com.rom4ek.arcnavigationview.ArcNavigationView
         android:id="@+id/nav_view"
